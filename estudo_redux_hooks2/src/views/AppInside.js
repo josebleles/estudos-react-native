@@ -7,15 +7,16 @@ export default function() {
     const dispatch = useDispatch();
 
     function disparar(){
-        dispatch({type:"ADD_USER" });
+        dispatch({type:"ADD_USER", action: "teste"});
     }
     return (
         <View>
+            {usuarios &&
             <FlatList 
             data={usuarios}
             renderItem={({ item }) => <Text>{item.title}</Text>}
             keyExtractor={item => item.id}
-            />
+            />}
             <Button title="Button" onPress={()=>{disparar()}} />
         </View>
     );
