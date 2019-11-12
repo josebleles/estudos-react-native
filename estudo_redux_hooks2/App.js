@@ -1,23 +1,15 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  View,
-  StatusBar,
-} from 'react-native';
+import { View, Text, FlatList, Button } from 'react-native';
+import AppInside from './src/views/AppInside';
+import { Provider } from 'react-redux';
+import store from './src/store';
 
-const App = () => {
+export const App = () => {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        { true && <View style={{height:200, width:200, backgroundColor: "#faf"}}/> }
-      </SafeAreaView>
-    </>
+    <Provider store={store}>
+      <AppInside />
+    </Provider>
   );
 };
-
-const styles = StyleSheet.create({
-});
 
 export default App;
