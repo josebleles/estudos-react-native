@@ -27,6 +27,15 @@ export default (state = {logando:undefined, erro_login:undefined, user:undefined
 // --------------- ACTIONS -----------------
 
 const login = (user, dispatcher)=> {
+    if(!user){
+        return dispatcher({ type:TYPES.ERRO_LOGIN, erro: "preencha" });
+    }
+    if(!user.login){
+        return dispatcher({ type:TYPES.ERRO_LOGIN, erro: "preencha o login" });
+    }
+    if(!user.senha){
+        return dispatcher({ type:TYPES.ERRO_LOGIN, erro: "preencha a senha" });
+    }
     fetch(API_URL+"/login", {
         headers: new Headers(
             ["SECRET_KEY", "aAAAAA"]
