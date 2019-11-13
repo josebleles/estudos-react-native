@@ -1,10 +1,10 @@
 import { API_URL } from '../../constants';
-import { useDispatch } from 'react-redux';
+import { useDispatch } from 'redux';
 
 const TYPES = {
-    LOGIN = "LOGIN",
-    ERRO_LOGIN = "ERRO_LOGIN",
-    SUCESSO_LOGIN = "ERRO_LOGIN", 
+    LOGIN:"LOGIN",
+    ERRO_LOGIN:"ERRO_LOGIN",
+    SUCESSO_LOGIN:"ERRO_LOGIN", 
 };
 
 
