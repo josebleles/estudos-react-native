@@ -6,20 +6,19 @@ const TYPES = {
     SUCESSO_LOGIN:"SUCESSO_LOGIN", 
 };
 
-const user = (state = {user:null, logando: false, erro_login: false}, action) => {
+export default (state = {} , action) => {
 
     if(action.type == TYPES.LOGIN){
         login(action.user, action.asyncDispatch);
-        return { ...state, logando: true };
+        return { logando: true };
     }
 
     if(action.type == TYPES.ERRO_LOGIN){
-        return { ...state, logando: false, erro_login: action.erro };
+        return { erro_login: action.erro };
     }
 
     if(action.type == TYPES.SUCESSO_LOGIN){
-        console.log("___---teste---___");
-        return { ...state, logando: false, user: action.user };
+        return { user: action.user };
     }
 
     return state;
@@ -45,5 +44,3 @@ const login = (user, dispatcher)=> {
         return dispatcher({type:TYPES.ERRO_LOGIN, erro: "Erro ao tentar se autenticar "+err });
     });
 }
-
-export default user;
