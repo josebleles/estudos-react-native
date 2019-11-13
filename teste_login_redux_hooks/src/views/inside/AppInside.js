@@ -12,8 +12,8 @@ export default function AppInside() {
             <StatusBar barStyle="dark-content" />
             <SafeAreaView style={{height:"100%", width:"100%", backgroundColor:"#faf"}}>
                 <TextInput onChangeText={(text)=>console.log(text)} />
-                {erro_login && <Text> {erro_login} </Text>}
-                {logando && <Text> Logando </Text>}
+                { erro_login && <Text> {erro_login} </Text> }
+                { logando && <Text> Logando </Text> }
                 <Button title="Login" onPress={()=>dispatch({type:"LOGIN", user})} />
             </SafeAreaView>
         </>

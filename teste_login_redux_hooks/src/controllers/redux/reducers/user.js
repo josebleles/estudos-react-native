@@ -6,7 +6,7 @@ const TYPES = {
     SUCESSO_LOGIN:"SUCESSO_LOGIN", 
 };
 
-export default (state = {} , action) => {
+export default (state = {logando:undefined, erro_login:undefined, user:undefined} , action) => {
 
     if(action.type == TYPES.LOGIN){
         login(action.user, action.asyncDispatch);
