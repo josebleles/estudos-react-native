@@ -1,2 +1,2 @@
 import apiconsts from "./api"; 
-export default {...apiconsts};
+export default { ...apiconsts };
